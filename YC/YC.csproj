@@ -81,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBSchema\CreateDB.sql" />
+    <Content Include="Scripts\YC.js" />
+    <Content Include="Views\Curd.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +100,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
