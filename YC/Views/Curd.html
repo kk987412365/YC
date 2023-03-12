@@ -6,7 +6,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src="Scripts/YC.js"></script>
+    <script src="../Scripts/YC.js"></script>    
     <meta charset="utf-8" />
     <title></title>
     <script>
@@ -28,7 +28,7 @@
             if (!confirm('確定新增?')) return;
             if (!insertVerify()) return;
             var insertData = $('#createDiv').getData();
-            $.httpPut('curd/insertCustomer', insertData, function (items) {
+            $.httpPut('../curd/insertCustomer', insertData, function (items) {
                 if (items != 'success') {
                     alert(items);
                     return;
@@ -38,6 +38,8 @@
                     $('#searchDiv #Id').val('A123456789');
                     searchBut();
                 }
+            }, function (items) {
+                alert(item);
             });
         }
         var searchBut = function () {
@@ -57,7 +59,7 @@
             if (!confirm('確定查詢?')) return;
             if (!searchVerify()) return;
             var id = $('#searchDiv #Id').val();
-            $.httpGet('curd/getCustomerByID/' + id, function (items) {
+            $.httpGet('../curd/getCustomerByID/' + id, function (items) {
                 if (items.length == 0) {
                     alert('查無資料');
                     UnitTestFinish();
@@ -87,7 +89,7 @@
             if (!confirm('確定修改?')) return;
             if (!updateVerify()) return;
             var updataData = $('#updateDeleteDiv').getData();
-            $.httpPost('curd/updateCustomerByID', updataData, function (items) {
+            $.httpPost('../curd/updateCustomerByID', updataData, function (items) {
                 if (items != 'success') {
                     alert(items);
                     UnitTestFinish();
@@ -106,7 +108,7 @@
                 alert('請先查詢要移除的客戶');
                 return;
             }
-            $.httpDelete('curd/deleteCustomerByID/' + id, function (items) {
+            $.httpDelete('../curd/deleteCustomerByID/' + id, function (items) {
                 alert('delete : ' + items);
                 UnitTestFinish();
             });

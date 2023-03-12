@@ -81,12 +81,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBSchema\CreateDB.sql" />
+    <Content Include="Global.asax" />
     <Content Include="Scripts\YC.js" />
     <Content Include="Views\Curd.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\VerifyAttribute.cs" />
+    <Compile Include="Controllers\CurdController.cs" />
+    <Compile Include="Enums\DbConnection.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
+    <Compile Include="Extensions\ModelExtension.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ErrorUtility.cs" />
+    <Compile Include="Utilities\Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -97,10 +110,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

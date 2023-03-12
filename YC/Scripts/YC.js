@@ -26,7 +26,7 @@
                 success(data);
             },
             error: function (data) {
-                fail(data);
+                failure(data);
             }
         });
     };
@@ -41,7 +41,7 @@
                 success(data);
             },
             error: function (data) {
-                fail(data);
+                failure(data);
             }
         });
     };
@@ -57,7 +57,7 @@
                 success(data);
             },
             error: function (data) {
-                fail(data);
+                failure(data);
             }
         })
     };
