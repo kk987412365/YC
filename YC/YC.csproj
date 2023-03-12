@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DBSchema\CreateDB.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
